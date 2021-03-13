@@ -33,7 +33,7 @@ header {
   font-size: 5rem;
   font-style: italic;
   font-weight: bold;
-  color: white;
+  color:white;
   transform: rotate(-20deg);
   transform-origin: 5% 50%;
   text-shadow: 0px 0px 10px rgba(255, 79, 0, 0.7);
@@ -41,33 +41,29 @@ header {
 }
 
 #body {
-  margin-top: 0.2rem;
+  margin-top: 0.8rem;
   padding: 1rem;
-  border-radius: 20px;
-  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  box-shadow: 0px 6px 6px rgba(255, 79, 0, 0.3);
   display: flex;
-  /* align-items: center; */
   flex-direction: column;
+  /* border: 2px solid red; */
 }
 
 #body img {
   margin: auto;
-  /* margin-right: auto; */
   max-width: 220px;
   clip-path: circle();
 }
 
-#body h1,
-h2,
-h3 {
+#body h2 {
   color: rgba(255, 79, 0, 1);
 }
 
 .linksbar {
-  color: rgb(255, 79, 0);
+  align-items: flex-end;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
   justify-content: space-evenly;
   text-decoration: none;
 }
