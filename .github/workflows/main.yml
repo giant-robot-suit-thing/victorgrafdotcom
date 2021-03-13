@@ -1,19 +1,23 @@
+name: Push website
+on:
+  push:
+    branches: [main]
 jobs:
-  deploy:
-    name: Upload to Amazon S3
-    runs-on: ubuntu-latest
+    deploy:
+      name: Upload to Amazon S3
+      runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+      steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Configure AWS credentials from Test account
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
-        aws-region: us-west-2
+      - name: Configure AWS credentials from Test account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-region: us-west-2
 
-    - name: Copy files to the test website with the AWS CLI
-      run: |
-        aws s3 sync . s3://www.victorgraf.com
+      - name: Copy files to the test website with the AWS CLI
+        run: |
+          aws s3 sync . s3://www.victorgraf.com
