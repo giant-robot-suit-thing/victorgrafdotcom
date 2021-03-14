@@ -20,4 +20,4 @@ jobs:
 
       - name: s3 sync files to bucket
         run: |
-          aws s3 sync . s3://www.victorgraf.com
+          aws s3 sync . s3://${{ secrets.S3_BUCKET_NAME }}
